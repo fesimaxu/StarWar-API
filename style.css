@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root{
+    --primary-color : #000000;
+    --light-color: #FF0000;
+    --dark-color: rgba(0, 0, 0, 0.75);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /* margin: 20px;
+    padding: 20px; */
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--primary-color);
+    color: white;
+    /* line-height: 1.6; */
+    /* min-height: 100vh; */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.logo {
+    color:  white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+span{
+    color: #a8a432;
+} 
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid transparent;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    /* margin-left: 400px; */
+}
+
+nav ul li a:hover{
+    color: #a8a432;
+    transition: .4s;
+}
+
+.btn {
+    background-color: #a8a432;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+.btn:hover{
+    transform: scale(1.2);
+}
+
+h1 {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+img {
+    margin-top: 50px;
+    height: 400px;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5%;
+}
+
+.content {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    /* height: 15%; */
+}
+
+/* .content {
+    margin: 1.2rem;
+    
+    box-shadow: 0 0 1px 2px yellowgreen;
+    width: 23%;
+    padding:1.5em;
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: rgb(210, 202, 202);
+   
+   
+  } */
+
+
+.content button {
+    margin: 50px 0px 50px 80px;
+    padding: 20px;
+    height: 20px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.content button h5{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 40px;
+}
