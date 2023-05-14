@@ -4,9 +4,9 @@ async function getStarWars(){
 
     try {
 
-        let res = await fetch(url);
-        // console.log( await res.json())
-        return await res.json();
+        let res =  await fetch(url);
+        //  await res.json()
+    return await res.json();
 
     } catch (error) {
 
@@ -14,22 +14,28 @@ async function getStarWars(){
     }
 }
 
-// a setter function to render the starwar names and pictures to the front end
+//getStarWars()
+
+
+
+// // a setter function to render the starwar names and pictures to the front end
 async function renderStawars(){
     let starWars = await getStarWars();
+    //console.log(starWars)
 
     let html = ''
 
-    starWars.results.forEach(starWar => {
-        
+    for(let index in starWars.results){
+       //console.log(starWars.results[index].name)
         let htmlSection = `<div class="Content">
-        <img src="./images/${starWar.name}.jpeg" alt="star"><br>
-        <button id="button" ><h5>${starWar.name}</h5></button>
+        <img src="./images/${starWars.results[index].name}.jpeg" alt="star"><br>
+        <button id="button" onclick="renderData(${index})"><h5>${starWars.results[index].name}</h5></button>
+        
         </div>`;
 
         html += htmlSection;
-    });
 
+}
     let content = document.querySelector('.content');
     content.innerHTML = html;
 
@@ -39,30 +45,21 @@ async function renderStawars(){
 renderStawars()
 
 
-// async function renderGH(){
-//     let starWars = await getStarWars();
-//     //console.log(starWars)
+// renders the height and gender on the frontend
+async function renderData(index){
+    let starWars = await getStarWars();
 
-//     let html = ''
+    let html =  `<div>
+        <b>${starWars.results[index].height}<b/>
+        <b>${starWars.results[index].gender}<b/>
+        </div>`;
 
-//     starWars.results.forEach(starWar => {
-
-//         //console.log(starWar) 
-        
-//         let htmlSection = `<div class="popcontent">
-//         <b>${starWar.gender}<b/>
-//         <b>${starWar.height}<b/>
-//         </div>`;
-
-//         html += htmlSection;
-//     });
-
-//     let content = document.querySelector('#content button');
-//     content.innerHTML = html;
+    let content = document.querySelector('#popcontent');
+    content.innerHTML = html;
 
 
-// }
 
-// renderGH()
+}
 
 
+  
