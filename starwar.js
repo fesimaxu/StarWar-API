@@ -14,23 +14,21 @@ async function getStarWars(){
     }
 }
 
-//getStarWars()
-
-
-
 // // a setter function to render the starwar names and pictures to the front end
 async function renderStawars(){
     let starWars = await getStarWars();
-    //console.log(starWars)
 
     let html = ''
 
     for(let index in starWars.results){
-       //console.log(starWars.results[index].name)
+       console.log(starWars.results[index].name)
         let htmlSection = `<div class="Content">
         <img src="./images/${starWars.results[index].name}.jpeg" alt="star"><br>
         <button id="button" onclick="renderData(${index})"><h5>${starWars.results[index].name}</h5></button>
-        
+        <ul id="${starWars.results[index].name}">
+              <li>${starWars.results[index].height}</li>
+              <li>${starWars.results[index].gender}</li>
+            </ul>
         </div>`;
 
         html += htmlSection;
@@ -49,15 +47,9 @@ renderStawars()
 async function renderData(index){
     let starWars = await getStarWars();
 
-    let html =  `<div>
-        <b>${starWars.results[index].height}<b/>
-        <b>${starWars.results[index].gender}<b/>
-        </div>`;
+    let content = document.getElementById(`${starWars.results[index].name}`);
 
-    let content = document.querySelector('#popcontent');
-    content.innerHTML = html;
-
-
+    content.document.cssClassList.toggle('.active')
 
 }
 
