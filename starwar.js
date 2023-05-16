@@ -25,10 +25,6 @@ async function renderStawars(){
         let htmlSection = `<div class="Content">
         <img src="./images/${starWars.results[index].name}.jpeg" alt="star"><br>
         <button id="button" onclick="renderData(${index})"><h5>${starWars.results[index].name}</h5></button>
-        <ul id="${starWars.results[index].name}">
-              <li>${starWars.results[index].height}</li>
-              <li>${starWars.results[index].gender}</li>
-            </ul>
         </div>`;
 
         html += htmlSection;
@@ -47,9 +43,9 @@ renderStawars()
 async function renderData(index){
     let starWars = await getStarWars();
 
-    let content = document.getElementById(`${starWars.results[index].name}`);
-
-    content.document.cssClassList.toggle('.active')
+    alert(
+        `${starWars.results[index].height} ${starWars.results[index].gender}`
+        )
 
 }
 
